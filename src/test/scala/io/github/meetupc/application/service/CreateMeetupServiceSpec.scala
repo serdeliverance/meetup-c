@@ -11,12 +11,14 @@ import io.github.meetupc.domain.Meetup
 
 class CreateMeetupServiceSpec extends CatsEffectSuite {
 
-    lazy val createMeetupService = new CreateMeetupService()
+  lazy val createMeetupService = new CreateMeetupService()
 
-    test("meetup creation") {
-        // TODO replace this value for something more realistic such as now + 7 days
-        val date = Instant.now()
-        val cmd = CreateMeetupCommand("Hexagonal Arch in Scala", 5, date)
-        createMeetupService.create(cmd).map { result => assertEquals(result, Meetup(1, "Hexagonal Arch in Scala", 5, date)) }
+  test("meetup creation") {
+    // TODO replace this value for something more realistic such as now + 7 days
+    val date = Instant.now()
+    val cmd  = CreateMeetupCommand("Hexagonal Arch in Scala", 5, date)
+    createMeetupService.create(cmd).map { result =>
+      assertEquals(result, Meetup(Some(1), "Hexagonal Arch in Scala", 5, date))
     }
+  }
 }
