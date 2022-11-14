@@ -8,5 +8,6 @@ import java.util.UUID
 
 class CreateMeetupService extends CreateMeetupUseCase {
 
-  def create(cmd: CreateMeetupCommand): IO[Meetup] = IO.delay(Meetup(Some(UUID.randomUUID()), cmd.title, cmd.attendants, cmd.date))
+  def create(cmd: CreateMeetupCommand): IO[Meetup] =
+    IO.delay(Meetup(Some(UUID.randomUUID()), cmd.title, cmd.attendants, cmd.date))
 }
