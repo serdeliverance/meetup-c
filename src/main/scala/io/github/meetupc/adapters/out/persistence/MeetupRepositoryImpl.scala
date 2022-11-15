@@ -26,6 +26,8 @@ class MeetupRepositoryImpl(session: Session[IO]) extends MeetupRepository {
 }
 
 private object MeetupSQL {
+
+  // TODO
   val codec: Codec[Meetup] = ???
 
   val insertMeetupCmd =
