@@ -15,6 +15,8 @@ lazy val root = (project in file(".")).settings(
     "org.tpolecat" %% "skunk-core" % "0.2.3",
     "org.flywaydb" % "flyway-core" % "9.8.1",
     "org.postgresql" % "postgresql" % "42.2.18",
+    "ch.qos.logback" % "logback-classic" % "1.2.6",
+    "org.typelevel" %% "log4cats-slf4j" % "2.2.0",
     compilerPlugin("com.olegpy" %% "better-monadic-for" % "0.3.1"),
     "org.typelevel" %% "cats-effect-testing-specs2" % "1.4.0" % Test,
     "org.typelevel" %% "munit-cats-effect-3" % "1.0.7" % Test

@@ -8,6 +8,7 @@ import cats.effect.IO
 import java.time.Duration
 import scala.concurrent.duration._
 import io.github.meetupc.domain.Meetup
+import java.util.UUID
 
 class CreateMeetupServiceSpec extends CatsEffectSuite {
 
@@ -18,7 +19,7 @@ class CreateMeetupServiceSpec extends CatsEffectSuite {
     val date = Instant.now()
     val cmd  = CreateMeetupCommand("Hexagonal Arch in Scala", 5, date)
     createMeetupService.create(cmd).map { result =>
-      assertEquals(result, Meetup(Some(1), "Hexagonal Arch in Scala", 5, date))
+      assertEquals(result, Meetup(Some(UUID.randomUUID()), "Hexagonal Arch in Scala", 5, date))
     }
   }
 }
