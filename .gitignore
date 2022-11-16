@@ -2,5 +2,10 @@
 **/metals.sbt
 .bloop/
 .bsp/
+<<<<<<< HEAD
 .vscode/
 .metals/
+=======
+.metals/
+.vscode/
+>>>>>>> main
