@@ -1,10 +1,10 @@
-package io.github.meetupc.adapters.in.job
+package io.github.meetupc.adapters.out.migrator
 
 import cats.effect.IO
 import org.flywaydb.core.Flyway
 import io.github.meetupc.config.Database.DbConfig
 
-object Migration {
+object Migrator {
 
   def initializeDb(dbConfig: DbConfig): IO[Unit] =
     IO.delay {

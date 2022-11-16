@@ -3,8 +3,10 @@ package io.github.meetupc.config
 import cats.effect.Resource
 import skunk.Session
 import skunk.implicits._
+import skunk.codec.text._
+import cats.effect.IO
 
-object DbConfig {
+object Database {
 
   case class DbConfig(url: String, user: String, password: String)
 
@@ -13,6 +15,6 @@ object DbConfig {
       session
         .unique(sql"select version();".query(text))
         // TODO add logger library
-        .flatMap(v => println(s"Connected to Postgres $v"))
+        .map(v => println(s"Connected to Postgres $v"))
     }
 }
