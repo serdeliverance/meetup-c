@@ -1,6 +1,10 @@
 ThisBuild / organization := "com.example"
 ThisBuild / scalaVersion := "2.13.5"
 
+
+val http4s = "0.23.1"
+
+
 lazy val root = (project in file(".")).settings(
   name := "meetup-c",
   libraryDependencies ++= Seq(
@@ -12,6 +16,10 @@ lazy val root = (project in file(".")).settings(
     // standard "effect" library (Queues, Console, Random etc.)
     "org.typelevel" %% "cats-effect-std" % "3.3.12",
     // better monadic for compiler plugin as suggested by documentation
+    "org.http4s" %% "http4s-dsl" % http4s,
+    "org.http4s" %% "http4s-ember-server" % http4s,
+    "org.http4s" %% "http4s-circe" % http4s,
+
     "org.tpolecat" %% "skunk-core" % "0.2.3",
     "org.flywaydb" % "flyway-core" % "9.8.1",
     "org.postgresql" % "postgresql" % "42.2.18",

@@ -1,4 +1,3 @@
 # TODO
 
-* add format on save
-* add scalafix
+- add format on save
